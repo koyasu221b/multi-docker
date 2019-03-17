@@ -2,13 +2,6 @@ sudo: required
 services:
   - docker
 
-before_install:
-  - docker build -t koyasu221b/react-test -f ./client/Dockerfile.dev ./client
-
-
-#script:
-#  - docker run koyasu221b/react-test npm test -- --coverage
-
 after_success:
   - docker build -t koyasu221b/multi-client ./client
   - docker build -t koyasu221b/multi-nginx ./nginx
