@@ -2,6 +2,9 @@ sudo: required
 services:
   - docker
 
+before_install:
+  - gem install bundler
+
 after_success:
   - docker build -t koyasu221b/multi-client ./client
   - docker build -t koyasu221b/multi-nginx ./nginx
