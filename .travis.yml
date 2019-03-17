@@ -5,6 +5,9 @@ services:
 before_install:
   - gem install bundler
 
+script:
+  - echo "test"
+
 after_success:
   - docker build -t koyasu221b/multi-client ./client
   - docker build -t koyasu221b/multi-nginx ./nginx
